@@ -1,0 +1,603 @@
+﻿@model HomeVM
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Shortcut Icon" href="https://klbtheme.com/bacola/wp-content/uploads/2021/08/favicon.png"
+          type="image/x-icon">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+          integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.min.css"
+          integrity="sha512-cyIcYOviYhF0bHIhzXWJQ/7xnaBuIIOecYoPZBgJHQKFPo+TOBA+BY1EnTpmM8yKDU4ZdI3UGccNGCEUdfbBqw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/5e5d9e530b.js" crossorigin="anonymous"></script>
+    @RenderSection("style", false)
+    @*<link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="~/assets/css/flipclock.css">
+
+
+
+
+
+
+    *@
+
+
+</head>
+
+<body>
+
+    <h2 class="nav-tag">Due to the COVID 19 epidemic, orders may be processed with a slight delay</h2>
+    <header>
+        <section id="first-nav">
+
+            <nav>
+                <div class="container">
+                    <div class="row">
+                        <div class="navbar">
+                            <div class="col-4">
+                                <div class="list">
+                                    <ul>
+                                        <li><a asp-controller="about" asp-action="index">About Us</a></li>
+                                        <li><a asp-controller="register" asp-action="index">My account</a></li>
+                                        <li><a href="#">Wishlist</a></li>
+                                        <li><a href="#">Order Tracking</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="center">
+                                    <span class="secure-delivery">
+                                        <i class="fas fa-user-shield"></i>100% Secure delivery
+                                        without
+                                        contacting
+                                        the courier
+                                    </span>
+                                    <div class="call-helping">
+                                        <span>Need help? Call Us: <a href="">+ 0020 500</a></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-2">
+                                <div class="drops">
+                                    <div class="dropdown">
+                                        <button id="drip" class="btn btn- dropdown-toggle" type="button"
+                                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            English
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" href="#">English</a></li>
+                                            <li><a class="dropdown-item" href="#">Spanish</a></li>
+                                            <li><a class="dropdown-item" href="#">German</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown">
+                                        <button id="drop" class="btn btn- dropdown-toggle" type="button"
+                                                id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Course
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="dropdown-item" href="#">USD</a></li>
+                                            <li><a class="dropdown-item" href="#">INR</a></li>
+                                            <li><a class="dropdown-item" href="#">GPB</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </nav>
+            <hr>
+        </section>
+        <section id="second-nav">
+            <div class="container mt-4">
+                <div class="row mt-4">
+                    <div class="col-2">
+                        <div class="logo">
+                            <img src="~/assets/img/bacola-logo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-2 mt-2">
+                        <div class="select-alert">
+                            <button type="button" class="btn btn-" data-toggle="modal" data-target="#exampleModalLong">
+                                Select a Location <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                                 aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+
+
+                                            <h6>Enter your address and we will specify the offer for your area.</h6>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="search">
+                                                <input type="search" id="form1" placeholder="Search your location..."
+                                                       class="form-control" />
+                                            </div>
+                                            <div class="location">
+                                                <h3><a href="#">Azerbaijan</a></h3>
+                                                <h3><a href="#">Turkiye</a></h3>
+                                                <h3><a href="#">Pakistan</a></h3>
+                                                <h3><a href="#">Ukraina</a></h3>
+                                                <h3><a href="#">Israel</a></h3>
+                                                <h3> <a href="#">Turkmenstan</a></h3>
+                                                <h3> <a href="#">Iraq</a></h3>
+                                                <h3> <a href="#">Gurcistan</a></h3>
+                                                <h3> <a href="#">Dagestan</a></h3>
+                                                <h3> <a href="#">Portugal</a></h3>
+                                                <h3> <a href="#">Norway</a></h3>
+                                                <h3> <a href="#">Canada</a></h3>
+                                                <h3> <a href="#">US</a></h3>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <div class="form-outline">
+                                <input type="search" id="form1" placeholder="Search for products..."
+                                       class="form-control" />
+
+                            </div>
+                            <button id="search-btn" type="button" class="btn btn-primary">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="log-users">
+                            <a asp-controller="register" asp-action="index"><i id="log" class="fas fa-user-circle"></i></a>
+                            <span id="span">$0,00</span>
+                            <a asp-controller="card" asp-action="index"><i class="fas fa-cart-arrow-down"> <span>0</span></i></a>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+        </section>
+        <section id="third-nav">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="catagories">
+                            <a class="allCatan" href="#">
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <i class="fas fa-align-justify"> </i> @category.Name<i class="fas fa-angle-down"></i>
+                                }
+
+                            </a>
+                            <div id="ulli" class="drobovik d-none">
+                                <ul>
+                                    <li>
+                                        <a class="fruit" href="#"><i class="fas fa-apple-alt"></i> Fruits & Vegetables <i class="fas fa-angle-right"></i></a>
+                                        <di v class="fruits d-none">
+                                            <ul>
+                                                @foreach (var fruit in Model.Fruits)
+                                                {
+                                                    <li><a href="#">@fruit.Name</a></li>
+                                                }
+                                            </ul>
+                                        </di>
+                                    </li>
+                                    <li><a href=""><i class="fas fa-drumstick-bite"></i> Meats & SeaWoods</a></li>
+                                    <li><a href=""><i class="fas fa-egg"></i> Breakfast & Dairy</a></li>
+                                    <li>
+                                        <a class="bever" href="#"><i class="fas fa-mug-hot"></i> Beverages <i class="fas fa-angle-right"></i></a>
+                                        <div class="beverag d-none">
+                                            <ul>
+                                                @foreach (var beverage in Model.Beverages)
+                                                {
+                                                  <li><a href="#">@beverage.Name</a></li>
+                                                }
+                                                
+                                                
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#"><i class="fas fa-cookie-bite"></i> Breads & Bakery</a></li>
+                                    <li><a href="#"><i class="fas fa-snowflake"></i> Frozen Foods</a></li>
+                                    <li><a href="#"><i class="fas fa-cookie"></i> Biscuits & Snacks</a></li>
+                                    <li><a href="#"><i class="fas fa-seedling"></i> Grocery & Snaples</a></li>
+                                </ul>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-9">
+                        <div class="nav-bar">
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav mr-auto">
+                                        <li class="nav-item active">
+                                            <div id="btn-home-group" class="btn-group">
+                                                <button id="home-drop" class="btn btn-  dropdown-toggle" type="button"
+                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <a asp-controller="home" asp-action="index">HOME</a>
+                                                </button>
+                                                <div id="home-menu" class="dropdown-menu">
+                                                    <ul>
+                                                        <li><a href="#">Home1</a></li>
+                                                        <li><a href="#">Home2</a></li>
+                                                        <li><a asp-controller="home" asp-action="index">Home3</a></li>
+                                                        <li><a href="#">Home4</a></li>
+                                                        <li><a href="#">Home5</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <div class="btn-group">
+                                                <button id="btn-shop" class="btn btn-  dropdown-toggle" type="button"
+                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <a c style="text-decoration: none;" asp-controller="shop" asp-action="index">SHOP</a>
+                                                </button>
+                                                <div id="show-drop" class="dropdown-menu">
+                                                    <div class="show-menu">
+                                                        <div class="hide-shop">
+                                                            <ul>
+                                                                <li><a href="#">Shop List</a></li>
+                                                                <li><a href="#">Shop Default</a></li>
+                                                                <li><a href="#">Shop Right Sidebar</a></li>
+                                                                <li><a href="#">Shop Wide</a></li>
+                                                                <li><a href="#">Left Sidebar</a></li>
+                                                                <li><a href="#">Load more Button</a></li>
+                                                                <li><a href="#">Infinite Scrolling</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="hide-product">
+                                                            <ul>
+                                                                <li><a asp-controller="productdetail" asp-action="index">Product Detail</a></li>
+                                                                <li><a href="#">Product Default</a></li>
+                                                                <li><a href="#">Product Variable</a></li>
+                                                                <li><a href="#">Product Groupe</a></li>
+                                                                <li><a href="#">Product External</a></li>
+                                                                <li><a href="#">Product Downloadable</a></li>
+                                                                <li><a href="#">Product With Video</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="product-types">
+                                                            <ul>
+                                                                <li><a href="#">Product Types</a></li>
+                                                                <li><a href="#">Single Type 1</a></li>
+                                                                <li><a href="#">Single Type 2</a></li>
+                                                                <li><a href="#">Single Type 3</a></li>
+                                                                <li><a href="#">Single Type 4</a></li>
+                                                                <li><a href="#">Thumbnails Left</a></li>
+                                                                <li><a href="#">Zoom Image</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="show-pages">
+                                                            <ul>
+                                                                <li><a asp-controller="shop" asp-action="index">Shop Pages</a></li>
+                                                                <li><a asp-controller="card" asp-action="index">Cart</a></li>
+                                                                <li><a href="#">Checkout</a></li>
+                                                                <li><a asp-controller="register" asp-action="index">My Accaunt</a></li>
+                                                                <li><a href="#">Wishlist</a></li>
+                                                                <li><a href="#">order Tracking</a></li>
+                                                                <li><a href="#">Order on Whatsapp</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="shop-layouts">
+                                                            <ul>
+                                                                <li><a href="#">Shop Layouds</a></li>
+                                                                <li><a href="#">Two Columns</a></li>
+                                                                <li><a href="#">Third Columns</a></li>
+                                                                <li><a href="#">Third Columns Wide</a></li>
+                                                                <li><a href="#">Four Columns</a></li>
+                                                                <li><a href="#">Four Columns Wide</a></li>
+                                                                <li><a href="#">Five Columns Wide</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#"><i class="fas fa-drumstick-bite"></i> MEATS & SEAFOOD</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#"><i class="fas fa-cookie-bite"></i> BAKERY</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a href="#"><i class="fas fa-mug-hot"></i> BEVERAGES</a>
+                                        </li>
+                                        <li class="nav-item"><a asp-controller="blog" asp-action="index">BLOG</a></li>
+                                        <li class="nav-item"><a asp-controller="contact" asp-action="index">CONTACT</a></li>
+                                    </ul>
+
+                                </div>
+                            </nav>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+            <hr>
+        </section>
+
+    </header>
+    @RenderBody()
+    <footer>
+        <section id="image">
+            <div class="foot-img">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 mt-5">
+                            <div class="content">
+                                <h4>$20 discount for your first order</h4>
+                                <h2>Join our newsletter and get...</h2>
+                                <h6>Join our email subscription now to get updates on promotions and coupons.</h6>
+                                <div id="email-btn" class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Email Addres"
+                                           aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button id="btn-email" class="btn btn-outline-secondary"
+                                                type="button">
+                                            Subscribe
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-6 mt-5">
+                            <div class="image">
+                                <img src="https://klbtheme.com/bacola/wp-content/uploads/2021/04/coupon.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="garts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 mt-4">
+                        <div class="fresh-product">
+                            <span><i class="fas fa-burn"></i>Everyday fresh products</span>
+                        </div>
+
+                    </div>
+                    <div class="col-3 mt-4">
+                        <div class="delivery">
+                            <span><i class="fas fa-shipping-fast"></i> Free delivery for order over $70</span>
+                        </div>
+
+                    </div>
+                    <div class="col-3 mt-4">
+                        <div class="daily">
+                            <span><i class="fas fa-cookie"></i>Daily Mega Discounts</span>
+                        </div>
+
+                    </div>
+                    <div class="col-3 mt-4">
+                        <div class="best-price">
+                            <span><i class="fas fa-donate"></i>Best price on the market</span>
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </section>
+        <section id="links">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="fruit">
+                            <h5>FRUIT & VEGETABLES</h5>
+                            <ul>
+                                <li><a href="">Fresh Vegetables</a></li>
+                                <li><a href="">Herbs & Seasonings</a></li>
+                                <li><a href="">Fresh Fruits</a></li>
+                                <li><a href="">Cuts & Sprouts</a></li>
+                                <li><a href="">Exotic Fruits & Veggies</a></li>
+                                <li><a href="">Packaged Produce</a></li>
+                                <li><a href="">Party Trays</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col-2">
+                        <div class="breakfast">
+                            <h5>BREAKFAST & DAIRY</h5>
+                            <ul>
+                                <li><a href="">Milk & Flavoured Milk</a></li>
+                                <li><a href="">Butter and Margarine</a></li>
+                                <li><a href="">Cheese</a></li>
+                                <li><a href="">Eggs Substitutes</a></li>
+                                <li><a href="">Honey</a></li>
+                                <li><a href="">Marmalades</a></li>
+                                <li><a href="">Sour Cream and Dips</a></li>
+                                <li><a href="">Yogurt</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col-2">
+                        <div class="meat">
+                            <h5>MEAT & SEAFOOD</h5>
+                            <ul>
+                                <li><a href="">Breakfast Sausage</a></li>
+                                <li><a href="">Dinner Sausage</a></li>
+                                <li><a href="">Beef</a></li>
+                                <li><a href="">Chicken</a></li>
+                                <li><a href="">Sliced Deli Meat</a></li>
+                                <li><a href="">Shrimp</a></li>
+                                <li><a href="">Wild Caught Fillets</a></li>
+                                <li><a href="">Crab and Shellfish</a></li>
+                                <li><a href="">Farm Raised Fillets</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col-2">
+                        <div class="beverages">
+                            <h5>BEVERAGES</h5>
+                            <ul>
+                                <li><a href="">Water</a></li>
+                                <li><a href="">Sparkling Water</a></li>
+                                <li><a href="">Soda & Pop</a></li>
+                                <li><a href="">Coffee</a></li>
+                                <li><a href="">Milk & Plant-Based Milk</a></li>
+                                <li><a href="">Tea & Kombucha</a></li>
+                                <li><a href="">Drink Boxes & Pouches</a></li>
+                                <li><a href="">Craft Beer</a></li>
+                                <li><a href="">Wine</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="col-3">
+                        <div class="breads">
+                            <h5>BREADS & BAKERY</h5>
+                            <ul>
+                                <li><a href="">Milk & Flavoured Milk</a></li>
+                                <li><a href="">Butter and Margarine</a></li>
+                                <li><a href="">Cheese</a></li>
+                                <li><a href="">Eggs Substitutes</a></li>
+                                <li><a href="">Honey</a></li>
+                                <li><a href="">Marmalades</a></li>
+                                <li><a href="">Sour Cream and Dips</a></li>
+                                <li><a href="">Yogurt</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section id="Contact-foot">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 mt-5">
+                        <div class="working">
+                            <i class="fas fa-headset"></i>
+                            <h5>8 800 555-55</h5><br>
+                            <span>Working 8:00 - 22:00</span>
+                        </div>
+
+                    </div>
+                    <div class="col-6 mt-5">
+                        <div class="social">
+                            <h6>Download App on Mobile :</h6>
+                            <i class="fab fa-google-play"></i>
+                            <i class="fab fa-app-store"></i>
+                            <i class="fab fa-facebook"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+        </section>
+        <section id="end-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 mt-5">
+                        <div class="copyright">
+                            <p>Copyright 2022 © Bacola WordPress Theme. All rights reserved. Powered by KlbTheme.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 mt-5">
+                        <div class="socila-links">
+                            <a href="">
+                                Privacy Policy
+                            </a>
+                            <a href="">
+                                Terms and Conditions
+                            </a>
+                            <a href="">Cookie</a>
+                            <i class="fab fa-stripe"></i>
+                            <i class="fab fa-paypal"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-visa"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+
+
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/flipclock.min.js"></script>
+    <script src="~/assets/js/script.js"></script>
+</body>
+
+</html>
